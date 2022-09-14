@@ -67,10 +67,8 @@ while True:
     if sensor_value == 1:
         if status == 'moist':
             notification_text = "Your plant is thirsty."
-            add_water()
             status = "dry"
         else:
-            add_water()
             notification_text = "We watered again as the plant was still thirsty."
     else:
         if status == "dry":
@@ -81,4 +79,6 @@ while True:
             pass
     send_notification()
     save_data()
+    if status == 'dry':
+        add_water()
     time.sleep(3600)
