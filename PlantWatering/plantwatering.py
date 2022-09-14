@@ -59,7 +59,7 @@ def add_water():
 status='moist'
 
 while True:
-    time.sleep(3600)
+    time.sleep(60)
     sensor_power.on()
     sensor_value=sensor.value()
     time.sleep(0.01)
@@ -81,3 +81,4 @@ while True:
             pass
     send_notification()
     save_data()
+    time.sleep(3600)
