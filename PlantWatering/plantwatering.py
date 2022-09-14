@@ -77,8 +77,8 @@ while True:
         else:
             notification_text = ""
             pass
-    send_notification()
     save_data()
     if status == 'dry':
         add_water()
+    send_notification()
     time.sleep(3600)
