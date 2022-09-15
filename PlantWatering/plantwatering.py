@@ -59,7 +59,6 @@ sensor_power = Pin(16, Pin.OUT)
 status='moist'
 
 while True:
-    time.sleep(60)
     sensor_power.on()
     sensor_value=sensor.value()
     time.sleep(0.01)
