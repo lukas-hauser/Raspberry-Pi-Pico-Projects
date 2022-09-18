@@ -49,9 +49,6 @@ while not wlan.isconnected() and wlan.status() >= 0:
  print("Waiting to connect:")
  time.sleep(1)
 
-#print(wlan.ifconfig())
-#send_notification("Thirsty Plant's wlan connected.")
-
 green_led = Pin('LED', Pin.OUT)
 sensor = Pin(17, Pin.IN, Pin.PULL_DOWN)
 sensor_power = Pin(16, Pin.OUT)
@@ -79,5 +76,6 @@ while True:
     save_data()
     if status == 'dry':
         add_water()
-    send_notification(notification_text)
-    time.sleep(3600)
+    if notification_text != "":
+        send_notification(notification_text)
+    time.sleep(300)
